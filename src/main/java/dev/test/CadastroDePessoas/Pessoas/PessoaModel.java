@@ -1,6 +1,9 @@
-package dev.test.CadastroDePessoas;
+package dev.test.CadastroDePessoas.Pessoas;
 
+import dev.test.CadastroDePessoas.Carros.CarrosModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "tb_cadastro")
@@ -12,6 +15,9 @@ public class PessoaModel {
     private String nome;
     private String email;
     private int idade;
+  //Uma pessoa pode alugar varios carros
+   @OneToMany (mappedBy = "pessoa")
+    private List<CarrosModel> carros;
 
     public PessoaModel() {
     }
@@ -45,4 +51,7 @@ public class PessoaModel {
     public void setEmail(String email) {
         this.email = email;
     }
+
+
+
 }
