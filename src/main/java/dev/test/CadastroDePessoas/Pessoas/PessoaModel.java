@@ -28,8 +28,4 @@ public class PessoaModel {
     @OneToMany (mappedBy = "pessoa")
     private List<CarrosModel> carros;
 
-    public PessoaModel() {
-    }
-
-
 }
