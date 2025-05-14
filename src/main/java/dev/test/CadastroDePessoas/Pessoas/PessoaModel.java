@@ -24,8 +24,8 @@ public class PessoaModel {
     @Column(unique = true)
     private String email;
     private int idade;
-   //Uma pessoa pode alugar varios carros
-   @OneToMany (mappedBy = "pessoa")
+    //Uma pessoa pode alugar varios carros
+    @OneToMany (mappedBy = "pessoa")
     private List<CarrosModel> carros;
 
     public PessoaModel() {

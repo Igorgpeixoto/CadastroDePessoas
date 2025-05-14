@@ -1,0 +1,19 @@
+feat: Commits que adicionam ou removem uma nova funcionalidade
+
+fix: Commits que corrigem um bug
+
+refactor: Commits que reescrevem/reestruturam seu código, porém sem alterar o comportamento da API
+
+perf: Commits especiais de refactor que melhoram a performance
+
+style: Commits que não afetam o significado (espaços em branco, formatação, ponto e vírgula ausente, etc.)
+
+test: Commits que adicionam testes ausentes ou corrigem testes existentes
+
+docs: Commits que afetam apenas a documentação
+
+build: Commits que afetam componentes de build como ferramentas de build, pipeline de CI, dependências, versão do projeto, etc.
+
+ops: Commits que afetam componentes operacionais como infraestrutura, deploy, backup, recuperação, etc.
+
+chore: Commits diversos, por exemplo, modificar o .gitignore
