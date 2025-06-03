@@ -2,10 +2,18 @@ package dev.test.CadastroDePessoas.Pessoas;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/pessoa")
-
 public class PessoaController {
+
+    private PessoaService pessoaService;
+
+    public PessoaController(PessoaService pessoaService) {
+        this.pessoaService = pessoaService;
+    }
+
     @GetMapping("/boasvindas")
     public String boasVindas () {
         return "Essa é minha primeira mensagem nessa rota";
@@ -18,8 +26,8 @@ public class PessoaController {
     }
     //Procurar pessoa (READ)
     @GetMapping("/todos")
-    public String mostrarPessoa(){
-        return "mostrar pessoa";
+    public List<PessoaModel> mostrarPessoa(){
+        return pessoaService.listarPessoas();
     }
     //Mostrar pessoa (READ)
     @GetMapping("/todosID")
