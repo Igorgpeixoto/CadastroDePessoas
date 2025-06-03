@@ -1,5 +1,6 @@
 package dev.test.CadastroDePessoas.Carros;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.test.CadastroDePessoas.Pessoas.PessoaModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -21,6 +22,7 @@ public class CarrosModel {
     //Varios carros para 1 pessoa
     @ManyToOne
     @JoinColumn(name = "pessoas_id")
+    @JsonIgnore
     private PessoaModel pessoa;
 }
 

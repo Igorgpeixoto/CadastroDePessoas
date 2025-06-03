@@ -21,18 +21,21 @@ public class PessoaController {
 
     //Cadastrar pessoa (CREATE)
     @PostMapping("/criar")
-    public String criarPessoa() {
-        return "Pessoa cadastrada";
+    public PessoaModel criarPessoa(@RequestBody PessoaModel pessoa) {
+        return pessoaService.cadastrarPessoa(pessoa);
     }
+
     //Procurar pessoa (READ)
     @GetMapping("/todos")
     public List<PessoaModel> mostrarPessoa(){
         return pessoaService.listarPessoas();
     }
-    //Mostrar pessoa (READ)
-    @GetMapping("/todosID")
-    public String mostrarPessoaID() {
-        return "mostrar pessoa ID";
+
+    //Mostrar pessoa por id(READ)
+    //pathvbariable fala que a variavel vai aparecer no link para pesquisar quem quiser
+    @GetMapping("/todos/{id}")
+    public PessoaModel mostrarPessoaID(@PathVariable Long id) {
+        return pessoaService.listarPessoaId(id);
     }
     //Alterar dados das pessoas (UPDATE)
     @PutMapping("/alterar")

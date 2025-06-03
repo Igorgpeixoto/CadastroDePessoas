@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PessoaService {
@@ -15,7 +16,15 @@ public class PessoaService {
     public List<PessoaModel> listarPessoas(){
         return pessoaRepository.findAll();
     }
-    //Inserir no banco de dados
+    //Listar pessoas por ID
+    public PessoaModel listarPessoaId(Long id){
+        Optional<PessoaModel> pessoaModel = pessoaRepository.findById(id);
+        return pessoaModel.orElse(null);
+    }
+    //Cadastrar pessoa
+    public PessoaModel cadastrarPessoa(PessoaModel pessoa){
+        return pessoaRepository.save(pessoa);
+    }
 
     }
 
