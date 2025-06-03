@@ -25,6 +25,10 @@ public class PessoaService {
     public PessoaModel cadastrarPessoa(PessoaModel pessoa){
         return pessoaRepository.save(pessoa);
     }
+    //Deletar pessoa por id, deletar precisa ser um metodo void
+    public void deletarPessoa (Long id){
+        pessoaRepository.deleteById(id);
+    }
 
     }
 

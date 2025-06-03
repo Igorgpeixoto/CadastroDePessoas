@@ -1,5 +1,6 @@
 package dev.test.CadastroDePessoas.Pessoas;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,10 +22,10 @@ public class PessoaController {
 
     //Cadastrar pessoa (CREATE)
     @PostMapping("/criar")
-    public PessoaModel criarPessoa(@RequestBody PessoaModel pessoa) {
-        return pessoaService.cadastrarPessoa(pessoa);
+    public ResponseEntity<String> criarPessoa(@RequestBody PessoaModel pessoa) {
+        pessoaService.cadastrarPessoa(pessoa);
+        return ResponseEntity.ok("Pessoa cadastrada com sucesso!");
     }
-
     //Procurar pessoa (READ)
     @GetMapping("/todos")
     public List<PessoaModel> mostrarPessoa(){
@@ -43,8 +44,10 @@ public class PessoaController {
         return "Alterar por id";
     }
     //Deletar Pessoa (DELETE)
-    @DeleteMapping("/deletarID")
-    public String deletarPorId(){
-        return "Deletar por id";
+    @DeleteMapping("/deletar/{id}")
+    public ResponseEntity<String> deletarPessoa(@PathVariable Long id) {
+        pessoaService.deletarPessoa(id);
+        return ResponseEntity.ok("Pessoa deletada com sucesso!");
     }
+
 }
