@@ -12,7 +12,7 @@ public class CarrosController {
     public String criarCarro() { return "Carro criado"; }
 
     //Procurar carro (READ)
-    @GetMapping("/listar")
+    @GetMapping("/todos")
     public String mostrarCarro() { return "Carros Listados com sucesso"; }
 
     //Alterar dados dos carros (UPDATE)

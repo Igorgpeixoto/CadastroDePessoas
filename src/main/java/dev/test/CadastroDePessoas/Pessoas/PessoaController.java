@@ -3,7 +3,7 @@ package dev.test.CadastroDePessoas.Pessoas;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
+@RequestMapping("/pessoa")
 
 public class PessoaController {
     @GetMapping("/boasvindas")
