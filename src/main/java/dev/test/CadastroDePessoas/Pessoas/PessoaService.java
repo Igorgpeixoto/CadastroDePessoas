@@ -11,6 +11,12 @@ public class PessoaService {
 
     @Autowired
     private PessoaRepository pessoaRepository;
+    private PessoaMapper pessoaMapper;
+
+    public PessoaService(PessoaRepository pessoaRepository, PessoaMapper pessoaMapper) {
+        this.pessoaRepository = pessoaRepository;
+        this.pessoaMapper = pessoaMapper;
+    }
 
     //Listar todas as pessoas
     public List<PessoaModel> listarPessoas(){
@@ -22,8 +28,10 @@ public class PessoaService {
         return pessoaModel.orElse(null);
     }
     //Cadastrar pessoa
-    public PessoaModel cadastrarPessoa(PessoaModel pessoa){
-        return pessoaRepository.save(pessoa);
+    public PessoaDTO cadastrarPessoa(PessoaDTO pessoaDTO){
+        PessoaModel pessoa = pessoaMapper.map(pessoaDTO);
+        pessoa = pessoaRepository.save(pessoa);
+        return pessoaMapper.map(pessoa);
     }
     //Deletar pessoa por id, deletar precisa ser um metodo void
     public void deletarPessoa (Long id){

@@ -22,7 +22,7 @@ public class PessoaController {
 
     //Cadastrar pessoa (CREATE)
     @PostMapping("/criar")
-    public ResponseEntity<String> criarPessoa(@RequestBody PessoaModel pessoa) {
+    public ResponseEntity<String> criarPessoa(@RequestBody PessoaDTO pessoa) {
         pessoaService.cadastrarPessoa(pessoa);
         return ResponseEntity.ok("Pessoa cadastrada com sucesso!");
     }
