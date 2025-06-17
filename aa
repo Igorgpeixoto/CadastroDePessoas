@@ -1,0 +1,114 @@
+[33mcommit afedc91998db7ab9d71621e55f661f878e998eec[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature/T-001-criar-mapper-dto[m[33m, [m[1;31morigin/feature/T-001-criar-mapper-dto[m[33m)[m
+Author: Igor Gabriel <igorgpassis@outlook.com>
+Date:   Mon Jun 9 09:23:08 2025 -0300
+
+    feat: cria dto e mapping para entidade pessoa
+
+[33mcommit 76b00932aee5a40fc00983eeaecde71c6c51a1da[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m
+Author: Igor Gabriel <igorgpassis@outlook.com>
+Date:   Wed Jun 4 15:38:25 2025 -0300
+
+    feat: Adiciona metodo PUT, porém ainda precisa de alterações
+
+[33mcommit dca385ccc35ec3a0527048fabf79c14e592d6086[m
+Author: Igor Gabriel <igorgpassis@outlook.com>
+Date:   Tue Jun 3 16:07:40 2025 -0300
+
+    feat: Adiciona rota de delecao por id
+
+[33mcommit 8094fae2c25fbda52da5d1e59627d90bc0cf995a[m
+Author: Igor Gabriel <igorgpassis@outlook.com>
+Date:   Tue Jun 3 15:30:23 2025 -0300
+
+    feat: inclui a roda te cadastro de pessoas usando metodo POST, tambem inicializando o postman
+
+[33mcommit 2896c49d0b860f8826552bb58cf49e843e0c77a6[m
+Author: Igor Gabriel <igorgpassis@outlook.com>
+Date:   Tue Jun 3 14:34:07 2025 -0300
+
+    feat: altera a rota do controller para listar pessoas e injeta dependencia do service no repository
+
+[33mcommit 6d31a2029cfaf0a4fef6a8a4d3e931fb9ce92639[m
+Author: Igor Gabriel <igorgpassis@outlook.com>
+Date:   Tue Jun 3 11:17:13 2025 -0300
+
+    feat: Altera nome das rotas do controller das pessoas
+
+[33mcommit ddb8b67c981b093bf05c436ffa05ffcecd85a0f0[m
+Author: Igor Gabriel <igorgpassis@outlook.com>
+Date:   Tue Jun 3 11:15:46 2025 -0300
+
+    feat: cria rotas controller com mock
+
+[33mcommit 00da8e137f768aa5f83b217a9718f56f54fdd1c5[m
+Author: Igor Gabriel <igorgpassis@outlook.com>
+Date:   Wed May 14 15:24:35 2025 -0300
+
+    Remover .env do controle de versão
+
+[33mcommit d53becc6277a325a2241b1d99b7788d9c27f0021[m
+Merge: 415dd3d 76b10fc
+Author: Igor Gabriel <igorgpassis@outlook.com>
+Date:   Wed May 14 15:20:32 2025 -0300
+
+    Merge branch 'main' of https://github.com/Igorgpeixoto/CadastroDePessoas
+
+[33mcommit 415dd3d9ff8b8326191e0a9f6ba05597b50044ef[m
+Author: Igor Gabriel <igorgpassis@outlook.com>
+Date:   Wed May 14 15:19:41 2025 -0300
+
+    chore: modificações no gitignore e app.properties
+
+[33mcommit 38fc2a084eaa121dc3358553f655225151e30d04[m
+Author: Igor Gabriel <igorgpassis@outlook.com>
+Date:   Wed May 14 15:17:16 2025 -0300
+
+    refactor: remover .env do meu controle de versão
+
+[33mcommit 76b10fcb6ee2b1497b2ed452242c70456ca47360[m
+Author: Igor Gabriel <igorgpassis@outlook.com>
+Date:   Wed May 14 11:46:37 2025 -0300
+
+    fix: corrige bud de 2 construtores vazios
+
+[33mcommit f26c5def085ee56525ebf18a85e163333cc25605[m
+Author: Igor Gabriel <igorgpassis@outlook.com>
+Date:   Wed May 14 11:37:21 2025 -0300
+
+    feat: adicionado service, repository, regras de commit e JpaRepository extendido
+
+[33mcommit 52005852aca9de0335c86e1afb5d6edf6ea7b382[m
+Author: Igor Gabriel <igorgpassis@outlook.com>
+Date:   Wed May 14 10:10:18 2025 -0300
+
+    fix: Coloca a coluna email como unica, nao podendo ter emails repetidos
+
+[33mcommit 97dd3b38498a1ca4665c17237c8bc092082c4aeb[m
+Author: Igor Gabriel <igorgpassis@outlook.com>
+Date:   Wed May 14 10:03:39 2025 -0300
+
+    feat: Coloca Lombok na classe para abstração
+
+[33mcommit 0634156850f5c218025fb8466882fb32429948f3[m
+Author: Igor Gabriel <igorgpassis@outlook.com>
+Date:   Tue May 13 14:58:19 2025 -0300
+
+    Modelagem do banco de dados,anotações feitas de relacionamento de tabela
+
+[33mcommit 9bb8a13146a8db4b515084d8fbf5f54cc81c7bbb[m
+Author: Igor Gabriel <igorgpassis@outlook.com>
+Date:   Mon May 12 15:13:32 2025 -0300
+
+    Criado entidade no banco de dados a partir do pessoamodel
+
+[33mcommit dc1b86c99de82c4765a95d4353bc8eef0f91134c[m
+Author: Igor Gabriel <igorgpassis@outlook.com>
+Date:   Mon May 12 14:46:56 2025 -0300
+
+    Criado a Controller [Aula2]
+
+[33mcommit fe51f54680e5920dde96036202a55c919f76be98[m
+Author: Igor Gabriel <igorgpassis@outlook.com>
+Date:   Mon May 12 14:25:24 2025 -0300
+
+    first commit

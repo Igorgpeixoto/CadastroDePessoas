@@ -19,11 +19,15 @@ public class PessoaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
+
     //Essa anotação diz que nao pode ter itens repetidos na coluna, nao pode ter emails repetidos
     @Column(unique = true)
     private String email;
+
     private int idade;
+
     //Uma pessoa pode alugar varios carros
     @OneToMany (mappedBy = "pessoa")
     private List<CarrosModel> carros;

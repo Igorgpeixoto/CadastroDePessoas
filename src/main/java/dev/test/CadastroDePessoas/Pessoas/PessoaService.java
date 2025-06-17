@@ -5,38 +5,59 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+
+import static dev.test.CadastroDePessoas.Pessoas.PessoaMapper.*;
 
 @Service
 public class PessoaService {
 
     @Autowired
     private PessoaRepository pessoaRepository;
+    private PessoaMapper pessoaMapper;
+
+    public PessoaService(PessoaRepository pessoaRepository, PessoaMapper pessoaMapper) {
+        this.pessoaRepository = pessoaRepository;
+        this.pessoaMapper = pessoaMapper;
+    }
 
     //Listar todas as pessoas
-    public List<PessoaModel> listarPessoas(){
-        return pessoaRepository.findAll();
+    public List<PessoaDTO> listarPessoas() {
+        List<PessoaModel> pessoa = pessoaRepository.findAll();
+        return pessoa.stream()
+                .map(pessoaMapper::map)
+                .collect(Collectors.toList());
     }
+
     //Listar pessoas por ID
-    public PessoaModel listarPessoaId(Long id){
-        Optional<PessoaModel> pessoaModel = pessoaRepository.findById(id);
-        return pessoaModel.orElse(null);
+    public PessoaDTO listarPessoaId(Long id) {
+        Optional<PessoaModel> pessoaPorId = pessoaRepository.findById(id);
+        return pessoaPorId.map(pessoaMapper::map).orElse(null);
+
     }
+
     //Cadastrar pessoa
-    public PessoaModel cadastrarPessoa(PessoaModel pessoa){
-        return pessoaRepository.save(pessoa);
+    public PessoaDTO cadastrarPessoa(PessoaDTO pessoaDTO) {
+        PessoaModel pessoa = pessoaMapper.map(pessoaDTO);
+        pessoa = pessoaRepository.save(pessoa);
+        return pessoaMapper.map(pessoa);
     }
+
     //Deletar pessoa por id, deletar precisa ser um metodo void
-    public void deletarPessoa (Long id){
+    public void deletarPessoa(Long id) {
         pessoaRepository.deleteById(id);
     }
+
     //Atualizar dados
-    public PessoaModel atualizarPessoa (Long id, PessoaModel pessoaAtualizada) {
-        if (pessoaRepository.existsById(id)) {
+    public PessoaDTO atualizarPessoa(Long id, PessoaDTO PessoaDTO) {
+        Optional<PessoaModel> pessoaExistente = pessoaRepository.findById(id);
+        if (pessoaExistente.isPresent()) {
+            PessoaModel pessoaAtualizada = PessoaMapper.map(PessoaDTO);
             pessoaAtualizada.setId(id);
-            return pessoaRepository.save(pessoaAtualizada);
+            PessoaModel pessoaSalva = pessoaRepository.save(pessoaAtualizada);
+            return pessoaMapper.map(pessoaSalva);
         }
         return null;
     }
-
-    }
+}
 
