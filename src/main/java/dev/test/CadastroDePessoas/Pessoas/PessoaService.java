@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 import static dev.test.CadastroDePessoas.Pessoas.PessoaMapper.*;
 
 @Service
-public class PessoaService {
+public final class PessoaService {
 
     @Autowired
     private PessoaRepository pessoaRepository;
